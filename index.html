@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de filmes</title>
+    <link rel="stylesheet" href="CSS/estilos.css" >
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/estrela.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="formulario">
+        <h1>Avaliação de filmes</h1>
+        <form id="formularioFilmes">
+            <label> Nome do Filme : </label>
+            <input type="text" id="nomeFilme" required>
+
+            <label>Gênero do filme : </label>
+            <div class="radios">
+            <input type = "radio" name="generoFilme" value="Ação">Ação
+            <input type = "radio" name="generoFilme" value="Comédia">Comédia
+            <input type = "radio" name="generoFilme" value="Suspense">Suspense
+            <input type = "radio" name="generoFilme" value="Drama">Drama
+            <input type = "radio" name="generoFilme" value="Ficção">Ficção Científica
+            <input type = "radio" name="generoFilme" value="Terror">Terror
+            <input type = "radio" name="generoFilme" value="Romance">Romance
+            <input type = "radio" name="generoFilme" value="Animação">Animação
+            <input type = "radio" name="generoFilme" value="Musical">Musical
+            <input type = "radio" name="generoFilme" value="Faroeste">Faroeste
+            <input type = "radio" name="generoFilme" value="Documentário">Documentário
+            </div>
+
+            <label> Avaliação do Filme (0-5) : </label>
+            <div id="notas" class="estrelas">
+            <input type="radio" id="estrela5" name="avaliacao" value="5"><label for="estrela5">⭐</label>
+            <input type="radio" id="estrela4" name="avaliacao" value="4"><label for="estrela4">⭐</label>
+            <input type="radio" id="estrela3" name="avaliacao" value="3"><label for="estrela3">⭐</label>
+            <input type="radio" id="estrela2" name="avaliacao" value="2"><label for="estrela2">⭐</label>
+            <input type="radio" id="estrela1" name="avaliacao" value="1"><label for="estrela1">⭐</label>
+            </div>
+
+            <label> Comentário sobre o filme : </label>
+            <input type="text" class="comentario" id="comentario"> 
+
+            <button type="button" class="enviar" onclick="adicionarFilme()">Adicionar filme</button>
+            <button type="reset" class="limpar" onclick="limparAvaliacao()">Limpar avaliação</button>
+            
+        </form>
+    </div>
+
+    <div class="ranking">
+        <h2> Ranking de filmes </h2>
+
+        <div>
+
+            <label class="filtrartext">Filtrar por Gênero:</label>
+            <select class="filtrar" id="filtrarGenero" onchange="filtrarPorGenero()">
+            <option value="">Todos</option>
+            <option value="Ação">Ação</option>
+            <option value="Comédia">Comédia</option>
+            <option value="Suspense">Suspense</option>
+            <option value="Drama">Drama</option>
+            <option value="Ficção">Ficção Científica</option>
+            <option value="Terror">Terror</option>
+            <option value="Romance">Romance</option>
+            <option value="Animação">Animação</option>
+            <option value="Musical">Musical</option>
+            <option value="Faroeste">Faroeste</option>
+            <option value="Documentário">Documentário</option>
+            </select>
+
+            <button id="exibirmelhores" onclick="exibirMelhores()">Melhores Avaliados (4,5)</button>
+            <button class="exibir" id="exibirTodos" onclick="exibirTodos()">Exibir Todos</button>
+            
+        </div>
+
+        <table id="rankingFilmes">
+            <thead>
+                <tr>
+                    <th>Nome do Filme : </th>
+                    <th>Gênero do filme : </th>
+                    <th class="ordenavel">Nota 0-5 :</th>
+                    <th> Comentário : </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+            <!--média-->
+            <tr class="media">
+            <td colspan="3"><strong>Média dos filmes:</strong></td>
+            <td id="total" class="total">0,0</td>
+            </tr>
+
+        </table>
+        <button class="remover"type="button" id="removerUltimo" onclick="removerUltimo()">Remover ultimo filme</button>
+    </div>
+    <script type="module" src="JS/main.js"></script>
+</body>
+</html>

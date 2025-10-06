@@ -1,0 +1,191 @@
+
+/* GERAL */
+body {
+  display:block;
+  flex-direction: column;
+  align-items:center; /* Centraliza os blocos na tela */
+  font-size: 20px ;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #fffaf2;
+
+  /* imagem de fundo */
+  background-image: url("../imagens/filmes.png");
+  background-size: cover;   /* cobre toda a tela */
+  background-position: center;
+  background-attachment: fixed; /* fundo fixo ao rolar */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #ffffff;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 50px;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 0 20px;
+}
+
+/* BLOCO PRINCIPAL */
+.formulario,
+.ranking {
+  background: #1b373d;
+  width: 950px;
+  min-height: 550px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0);
+}
+
+.ranking {
+  min-height: 550px;
+}
+
+/*  FORMULÁRIOS E INPUTS */
+
+label {
+  color:#bfdbdb;
+  display: block;
+  padding: 16px 10px;
+  font-weight: 600;
+  font-size: 35px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align:left;
+}
+
+.filtrartext{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 29px;
+
+}
+
+input[type="text"], select, textarea {
+  width: 95%;
+  padding: 10px 15px;
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-radius: 30px;
+  margin-bottom: 15px; /*-------------------*/
+  font-size: 25px;
+  outline: none; /*-------------------*/
+}
+
+/* BOTÕES */
+
+.enviar{
+    background: #ade9fc ;
+}
+
+.limpar{
+    background: #1d8383;
+}
+
+button,
+.filtrar {
+  height: 35px;
+  padding: 0 15px;
+  border-radius: 30px;
+  border: none;
+  background:#ade9fc;
+  color: #000d1c;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.exibir{
+    background: #1d8383;
+}
+
+.filtrar{
+    background-color: #87e3fa;
+}
+
+button:hover,
+.filtrar:hover {
+  transform: scale(1.05);
+}
+
+/* TABELAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: #0e4756;
+  color: #ffffff;
+  font-size: 18px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  border-radius: 30px;
+  overflow: hidden; /* mantém bordas arredondadas */
+}
+
+table th, table td {
+  border: 1px solid #1b373d;
+  padding: 10px;
+}
+
+table th {
+  border-radius: px;
+  background: #122328;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.comentario {
+  font-size: 16px;
+  text-align: left;
+}
+
+.ordenavel{
+    cursor: pointer;
+}
+
+/*  MÉDIA */
+.media {
+  background: #0e4756;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.total {
+  color: rgb(255, 255, 255);
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+
+/* ESTRELAS (AVALIAÇÃO) */
+.estrelas {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: 5px;
+
+}
+
+.estrelas input[type="radio"] {
+  display: none;
+}
+
+.estrelas label {
+  font-size: 40px;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.estrelas label:hover,
+.estrelas label:hover ~ label,
+.estrelas input[type="radio"]:checked ~ label {
+  color: #ffcc00;
+  transform: scale(1.2);
+}
+
